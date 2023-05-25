@@ -7,10 +7,9 @@
 
 @section('content')
 
-  
 
 
-  @endsection
+@endsection
 
 @push('scripts')
 {{-- dashboard js --}}

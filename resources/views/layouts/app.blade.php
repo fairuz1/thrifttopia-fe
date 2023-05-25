@@ -17,28 +17,8 @@
 	<body>
 
 		{{-- navbar --}}
-		<div class="navbar-background">
-			<section id="jumbotron">
-				<div class="jumbotron mx-auto pt-5">
-				<div class="container">
-					<div class="row">
-					<div class="col-8">
-						<h1 class="display-4" style="font-family: Italiana;">Jual barang bekas anti ribet <br>
-						hanya di 
-						<img src="{{ asset('images/icons/thriftopia-blue.svg') }}"> 
-						</h1>
-						<p class="lead">
-						<button class="mt-2 pl-4 pr-4 btn btn-outline-dark" href="#" role="button" style="border-radius: 20px;">Coba Sekarang!</button>
-						</p>
-					</div>
-					<div class="col customimage">
-						<img src="{{ asset('images/pictures/jumbotron.png') }}" alt="thriftopia" max-height="500">
-					</div>
-				</div>
-				</div>
-			</section>
-		</div>
 		@include('layouts.navbar')
+		@include('layouts.banner')		
 		
 		{{-- content --}}
 		<div class="page-content">
@@ -51,6 +31,8 @@
 
 		{{-- footer --}}
 		@include('layouts.footer')
+
+		{{-- javascript --}}
 		<script src="{{asset('bootstrap/js/bootstrap.bundle.min.js')}}"></script>
 	</body>
 </html>
