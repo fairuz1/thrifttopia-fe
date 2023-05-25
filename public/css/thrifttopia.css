@@ -2,7 +2,9 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* font-family: 'Poppins',sans-serif; */
+    outline: none;
+    list-style: none;
+    font-family: 'Montserrat', sans-serif;
   }
 
   :root {
@@ -11,9 +13,7 @@
     --yellow: #FED74C;
   }
 
-
- 
-.navbar-background{
+  .navbar-background{
     background-color: #0155B6;
     align-items: baseline;
     z-index: -1 !important  ;
@@ -35,8 +35,8 @@
 .jumbotron{
     margin-top: 6%;
     z-index: 1;
-    width: 1170px;
-    padding-left: 4%;
+    /* padding-left: 1%; */
+    /* margin-right: 4%; */
     height: 341px;
     border-radius: 60px;
     background-color: var(--yellow);
@@ -54,6 +54,17 @@ li.nav-item > .nav-link{
 
 li.nav-item > .nav-link:hover{
     color: var(--yellow);
+}
+
+.modal-content {
+    background-color: var(--yellow);
+    min-width: 50%;
+    min-height: 50%;
+    margin: 0;
+    /* font-size: 20%; */
+    /* border-radius: 60px;
+    width: 80vw;
+    height: 341px; */
 }
 
 .customimage{
@@ -96,14 +107,6 @@ btn{
 
 
 
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  outline: none;
-  list-style: none;
-  font-family: 'Montserrat', sans-serif;
-}
 
 body{
   background: #e4eefa;
