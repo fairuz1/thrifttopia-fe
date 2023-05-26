@@ -4,17 +4,29 @@
             <img src="{{ asset('/images/icons/thrifttopia_icons.svg ') }}" style="padding-bottom: 2%;">
             <p> Platform jual beli barang bekas dengan proses mudah dan cepat. Dapatkan harga terbaik dari orang sekitar, jadikan barang bekas bernilai jual. </p>
             <h6 class="mb-4 font-weight-bold"> Kontak Kami </h6>
-            <a class="btn btn-outline-light btn-floating m-1" class="text-white" role="button">
-                <i class="fab fa-instagram"></i>
-            </a>
+            <ul id="contacts" class="ps-0">
+                <li>
+                    <a class="btn btn-outline-light btn-floating shadow-none m-1" class="text-white" role="button">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <span class="me-2">@thriftopia.id</span>
+                </li>
+
+                <li>
+                    <a class="btn btn-outline-light btn-floating shadow-none m-1" class="text-white" role="button">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <span class="me-2">(+62) 87819944000</span>
+                </li>
+            </ul>
         </div>
         <hr class="w-100 clearfix d-md-none" />
     </div>
 
     <div>
         <hr class="my-3">
-        <section class="p-3 pt-0">
-            <div class="row d-flex align-items-left"> © 2023 Copyright Thriftopia </div>
-        </section>
+        <div class="p-3 pt-0">
+            <div class="row d-flex justify-content-end"> © 2023 Copyright Thriftopia </div>
+        </div>
     </div>
 </footer>

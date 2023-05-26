@@ -7,7 +7,7 @@
                     <img src="{{ asset('images/icons/thriftopia-blue.svg') }}"> 
                 </h1>
                 <p class="">
-                    <button class="btn btn-outline-dark lead mt-2 pl-4 pr-4" href="#" role="button" style="border-radius: 20px;">Coba Sekarang!</button>
+                    <button class="btn btn-outline-dark shadow-none lead mt-2 pl-4 pr-4" href="#" role="button" style="border-radius: 20px;">Coba Sekarang!</button>
                 </p>
             </div>
         </div>
