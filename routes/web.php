@@ -24,6 +24,8 @@ use App\Http\Controllers\DashboardController;
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
+Route::get('/jualBarang', [DashboardController::class, 'jualBarang'])->name('jualBarang');
+
 Route::group(['prefix' => 'auth'], function () {
 	Route::get('/login', [LoginController::class, 'index']);
     Route::get('/register', [LoginController::class, 'index']);

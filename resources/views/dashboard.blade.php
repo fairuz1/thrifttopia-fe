@@ -144,7 +144,7 @@
                                 <p class="card-text">Rp 50.000</p>
                             </div>
                             <div class="col-3 d-flex justify-content-end px-0">
-                                <button class="btn shadow-none p-0">
+                                <button class="btn shadow-none p-0" data-bs-toggle="modal" data-bs-target="#modalDetail">
                                     <img src="{{ asset('images/icons/arrow-circle-right.svg') }}" alt="go">
                                 </button> 
                             </div>
@@ -396,6 +396,53 @@
             </div>  
         </div>
     </div>
+
+    {{-- popup detail  --}}
+    <div class="modal custom fade" id="modalDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-login-label" aria-hidden="true">
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content" style="border-radius:40px; padding:20px">
+                <div class="modal-header border-0">
+                    <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" style="max-width: 30%">
+                    <button type="button" class="btn-close shadow-none mb-2" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body" style="font-size:14pt;">
+                    <div class="row">
+                        <div class="col">
+                            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                                <ol class="carousel-indicators">
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                                  <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+                                </ol>
+                                <div class="carousel-inner">
+                                  <div class="carousel-item active">
+                                    <img class="d-block w-100" src="{{ asset('images/pictures/Radio.png') }}" alt="First slide">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('images/pictures/Skintific.png') }}" alt="Second slide">
+                                  </div>
+                                  <div class="carousel-item">
+                                    <img class="d-block w-100" src="{{ asset('images/pictures/Jaket Kulit.png') }}" alt="Third slide">
+                                  </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+                                  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+                                  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                  <span class="sr-only">Next</span>
+                                </a>
+                              </div>
+                        </div>
+                        <div class="col">b</div>
+                        <div class="col">c</div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div> 
 
 
 
