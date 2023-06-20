@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\AdminController;
 use App\Http\Middleware\authAPI;
 use App\Http\Middleware\Authenticate;
 
@@ -26,6 +27,9 @@ Route::middleware([authAPI::class])->group(function(){
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 Route::get('/jualBarang', [DashboardController::class, 'jualBarang'])->name('jualBarang');
+Route::get('/home-admin', [AdminController::class, 'index'])->name('home-admin');
+Route::get('/ringkasan', [AdminController::class, 'ringkasan'])->name('ringkasan');
+Route::get('/pengguna', [AdminController::class, 'pengguna'])->name('pengguna');
 
 // Route::group(['prefix' => 'auth'], function () {
 // 	Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
