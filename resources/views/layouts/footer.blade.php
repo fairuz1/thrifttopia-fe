@@ -1,4 +1,4 @@
-<footer class="container-fluid p-5 text-lg-start text-white" style="background-color: #0155B6">
+<footer class="container-fluid text-lg-start text-white p-5 mt-5">
     <div class="row">
         <div class="col-md-4 col-lg-5 col-md-3 mt-4">
             <img src="{{ asset('/images/icons/thrifttopia_icons.svg ') }}" style="padding-bottom: 2%;">

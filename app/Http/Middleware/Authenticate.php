@@ -3,6 +3,10 @@
 namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
+use App\Providers\RouteServiceProvider;
+use Closure;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class Authenticate extends Middleware
 {
@@ -14,8 +18,20 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
+        // if (session()->has('auth')) {
+        //     return route('dashboard');
+        // } else {
+        //     return route('login');
+        // }
         if (! $request->expectsJson()) {
             return route('login');
         }
     }
+
+    protected function checkAuthData() {
+        if (session()->has('auth')) {
+            return route('dashboard');
+        }
+    }
+
 }

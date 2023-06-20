@@ -15,7 +15,6 @@
 		<link href="{{ asset('/css/thrifttopia.css') }}" rel="stylesheet">
 	</head>
 	<body>
-
 		{{-- navbar --}}
 		<div class="navbar-background">
 			<section id="jumbotron">

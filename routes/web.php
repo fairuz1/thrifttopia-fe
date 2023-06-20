@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\Authenticate;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,19 +15,17 @@ use App\Http\Controllers\DashboardController;
 |
 */
 
-// Route::get('/posting-barang', function () {
-//     return view('postingBarang');
+Auth::routes();
+// Route::group(['middleware' => 'Authenticate'], function () {
+//     Auth::routes();
 // });
 
-// Route::get('/autentikasi', function () {
-//     return view('autentikasi');
-// });
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
 Route::get('/jualBarang', [DashboardController::class, 'jualBarang'])->name('jualBarang');
 
-Route::group(['prefix' => 'auth'], function () {
-	Route::get('/login', [LoginController::class, 'index']);
-    Route::get('/register', [LoginController::class, 'index']);
-});
+// Route::group(['prefix' => 'auth'], function () {
+// 	Route::get('/login', [App\Http\Controllers\Auth\LoginController::class, 'login']);
+//     Route::get('/logout', [App\Http\Controllers\Auth\LoginController::class, 'logout']);
+//     Route::get('/register', [App\Http\Controllers\Auth\LoginController::class, 'register']);
+// });
