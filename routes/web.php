@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DashboardController;
+use App\Http\Middleware\authAPI;
 use App\Http\Middleware\Authenticate;
 
 /*
@@ -14,8 +15,10 @@ use App\Http\Middleware\Authenticate;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::middleware([authAPI::class])->group(function(){
+    Auth::routes();
+});
 
-Auth::routes();
 // Route::group(['middleware' => 'Authenticate'], function () {
 //     Auth::routes();
 // });
