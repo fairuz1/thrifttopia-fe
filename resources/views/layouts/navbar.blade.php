@@ -53,43 +53,39 @@
             {{-- <img src="{{ asset('images/pictures/daftar.png') }}" alt="go" style="max-width: 40%;"> --}}
             <label for="judulBarang" class="form-label" style="color: #656B74; font-weight:800">Judul Barang</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="judulBarang" placeholder="Masukkan judul barang Anda" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" name="judulBarang" id="judulBarang" placeholder="Masukkan judul barang Anda" aria-describedby="basic-addon3">
             </div>
 
             <label for="kategori" class="form-label" style="color: #656B74; font-weight:800">Kategori</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" id="kategori" placeholder="Msasukkan judul barang Anda" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Masukkan judul barang Anda" aria-describedby="basic-addon3">
             </div>
-        </div>
-        <div class="col">
-            <form>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><img src="{{ asset('images/icons/sms.svg') }}" alt="go"></span>
-                    <input type="text" class="form-control" placeholder="Masukkan e-mail Anda" aria-label="Username" name="email" id="email" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><img src="{{ asset('images/icons/user.svg') }}" alt="go"></span>
-                    <input type="text" class="form-control" placeholder="Buat Username Anda" aria-label="Username" name="username" id="username" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><img src="{{ asset('images/icons/key.svg') }}" alt="go"></span>
-                    <input type="password" class="form-control" placeholder="Buat kata sandi" aria-label="Password" name="password" id="password" aria-describedby="basic-addon1">
-                    <span class="input-group-text" id="basic-addon1"><img src="{{ asset('images/icons/key.svg') }}" alt="go"></span>
-                    <input type="password" class="form-control" placeholder="Ulangi kata sandi" aria-label="Password" aria-describedby="basic-addon1">
-                </div>
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><img src="{{ asset('images/icons/whatsapp.svg') }}" alt="go"></span>
-                    <input type="text" class="form-control" placeholder="Masukkan nomor Whatsapp" aria-label="Username" name="whatsapp" id="whatsapp" aria-describedby="basic-addon1">
-                </div>
-                <div class="row mt-3">
-                    <div class="col-3">
-                        <button type="button" class="btn btn-primary mx-2" style="background-color: #0155B6; border-radius:20px; min-width:90%; font-size:14pt">Daftar</button>
-                    </div>
-                    <div class="col">
-                        <div class="keterangan mt-1" style="font-size: 14pt"><p>Sudah punya akun? <a style="color: #0155B6; font-weight:800">Masuk di sini!</a></p></div>
-                    </div>
-                </div>
-            </form>
+
+            <label for="harga" class="form-label" style="color: #656B74; font-weight:800">Harga</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="harga" id="harga" placeholder="Masukkan harga" aria-describedby="basic-addon3">
+            </div>
+
+            <label for="deskripsi" class="form-label" style="color: #656B74; font-weight:800">Deskripsi</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukkan deskripsi" aria-describedby="basic-addon3">
+            </div>
+
+            <label for="fotoBarang" class="form-label" style="color: #656B74; font-weight:800">Foto Barang (Upload ke imgbox.com)</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="fotoBarang" id="fotoBarang" placeholder="Masukkan link imgbox disini" aria-describedby="basic-addon3">
+            </div>
+
+            <label for="lokasi" class="form-label" style="color: #656B74; font-weight:800">Foto Barang</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder="Masukkan lokasi Anda" aria-describedby="basic-addon3">
+            </div>
+
+            <label for="whatsapp" class="form-label" style="color: #656B74; font-weight:800">Foto Barang</label>
+            <div class="input-group mb-3">
+                <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Masukkan nomor hatsapp Anda" aria-describedby="basic-addon3">
+            </div>
+
         </div>
     </div>
 @endif

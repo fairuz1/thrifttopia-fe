@@ -24,7 +24,7 @@
 				</div>
 			</section>
 		</div>
-		@include('layouts.navbar')
+		@include('layouts.navbaronly')
 
 		{{-- footer --}}
 		@include('layouts.footer')

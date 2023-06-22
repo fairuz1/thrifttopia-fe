@@ -37,7 +37,7 @@
 </nav>
 
 {{-- navbar background --}}
-<div class="navbar-background"></div>
+{{-- <div class="navbar-background"></div>
 
 <div class="row jumbotron mx-5">
     <div class="col px-md-5 py-5" style="z-index: 999 !important; position: relative !important;">
@@ -56,5 +56,5 @@
     <div class="col-auto ms-auto d-none d-lg-block p-0">
         <img src="{{ asset('images/pictures/banner-image-cut.png') }}" class="img-fluid customimage" style="overflow: visible;" alt="thriftopia">
     </div>
-</div>
+</div> --}}
 

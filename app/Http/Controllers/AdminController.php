@@ -8,16 +8,16 @@ class AdminController extends Controller
 {
     public function index()
     {
-        return view('adminKonten');
+        return view('layouts-admin.adminKonten');
     }
 
     public function pengguna()
     {
-        return view('adminPengguna');
+        return view('layouts-admin.adminPengguna');
     }
 
     public function ringkasan()
     {
-        return view('adminRingkasan');
+        return view('layouts-admin.adminRingkasan');
     }
 }

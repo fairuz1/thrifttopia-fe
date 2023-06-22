@@ -149,7 +149,7 @@
                     {{-- modal header --}}
                     <div class="modal-header border-0">
                         <div class="col-auto me-auto">
-                            <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" class="img-fluid">
+                            <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" class="img-fluid" style="width: 60%">
                         </div>
                         <div class="col-auto ms-auto">
                             <button id="close-modal" type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>

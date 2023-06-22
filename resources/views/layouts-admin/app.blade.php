@@ -13,11 +13,17 @@
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500;1,600&family=Nunito:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-        <link href="{{ asset('/css/thrifttopia.css') }}" rel="stylesheet">
-
+        <link href="{{ asset('/css/thriftopia-admin.css') }}" rel="stylesheet">
         <script src="https://code.jquery.com/jquery-3.7.0.min.js" integrity="sha256-2Pmvv0kuTBOenSvLm6bvfBSSHrUJ+3A7x6P5Ebd07/g=" crossorigin="anonymous"></script>
         <script src="https://kit.fontawesome.com/88ef642845.js" crossorigin="anonymous"></script>
+        <!-- bootstrap5 dataTables css cdn -->
+        <link
+            rel="stylesheet"
+            href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"
+        />
 	</head>
+
+	
 	<body>
         @if (session()->has('successLogin'))
         {!! session()->get('successLogin') !!}
@@ -25,16 +31,15 @@
         @endif
 
 		{{-- navbar --}}
-		@include('layouts.navbar')
+        @include('layouts-admin.sidebar')
+        @include('layouts-admin.navbar')
 
         {{-- content --}}
         <main class="page-content">
             @yield('content')
-            @include('layouts.banner')
+            {{-- @include('layouts.banner') --}}
         </main>
 
-        {{-- footer --}}
-        @include('layouts.footer')
 
 		{{-- javascript --}}
 		<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
