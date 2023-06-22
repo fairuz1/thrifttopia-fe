@@ -12,11 +12,10 @@ class DashboardController extends Controller {
         $productsEndpoint = $baseUrl . '/products';
         $products = json_decode(json_encode($this->apiCall('GET', $productsEndpoint, false)), true);
         return view('dashboard', compact('products'));
-        // return view('dashboard', compact('data'));
     }
 
     public function jualBarang() {
-        return view('jualBarang');
+        return view('dashboard');
     }
 
     public function apiCall($method, $url, $data) {
