@@ -477,6 +477,61 @@ a:hover {
     border-radius: 1vw;
 }
 
+
+
+/* jualbarang */
+
+/**
+  Component
+**/
+
+label {
+  width: 100%;
+}
+
+.card-input-element {
+  display: none;
+}
+
+.card-input {
+  margin: 10px;
+  padding: 0px;
+}
+
+.card-input:hover {
+  cursor: pointer;
+}
+
+.card-input-element:checked + .card-input {
+   box-shadow: 0 0 5px 3px #00000089;
+   background-color: var(--blue);
+   color: var(--powder-white);
+   font-weight: bold;
+   .card-header{
+    color: var(--yellow);
+    font-size: 1.5rem;
+    font-weight: bold;
+   }
+   .card-body{
+    color: var(--powder-white);
+    font-size: 2rem;
+  }
+}
+
+   .card-input .card-header{
+    color: var(--grey);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+
+
+.card-input .card-body{
+  font-size: 1rem;
+  color: var(--grey);
+  
+}
+
+
 ::-webkit-input-placeholder { /* Chrome/Opera/Safari */
   color: var(--powder-grey);
 }

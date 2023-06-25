@@ -48,32 +48,46 @@
     <div class="row jumbotron mx-5 p-5">
         <div class="judul pb-1" id="staticBackdropLabel" style="font-size:32pt; color: #0155B6;"><span style="font-weight:800; line-height:9%">Unggah Barangmu </span>Sekarang!</div>
         <p style="color: #656B74; font-size:14pt; padding-bottom:10px"> Jual barang dan lakukan pembayaran, kami akan melakukan approval dalam 1x24 jam.
-        <div class="col-5">
-            {{-- <div class="judul pb-3" id="staticBackdropLabel" style="font-size:32pt; font-weight:800;"><span style="color: #0155B6; font-weight:800; line-height:9%">Daftar Akun, </span>dapatkan keuntungan!</div> --}}
-            {{-- <img src="{{ asset('images/pictures/daftar.png') }}" alt="go" style="max-width: 40%;"> --}}
+        <div class="col-7">
             <label for="judulBarang" class="form-label" style="color: #656B74; font-weight:800">Judul Barang</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="judulBarang" id="judulBarang" placeholder="Masukkan judul barang Anda" aria-describedby="basic-addon3">
             </div>
 
             <label for="kategori" class="form-label" style="color: #656B74; font-weight:800">Kategori</label>
-            <div class="input-group mb-3">
-                <input type="text" class="form-control" name="kategori" id="kategori" placeholder="Masukkan judul barang Anda" aria-describedby="basic-addon3">
-            </div>
+            <div class="dropdown">
+                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false" style="background-color: #0155B6">
+                  Pilih Kategori
+                </button>
+                <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                  <li><a class="dropdown-item" href="#">Elektronik</a></li>
+                  <li><a class="dropdown-item" href="#">Hobi</a></li>
+                  <li><a class="dropdown-item" href="#">Pakaian</a></li>
+                  <li><a class="dropdown-item" href="#">Rumah Tangga</a></li>
+                  <li><a class="dropdown-item" href="#">Kendaraan</a></li>
+                  <li><a class="dropdown-item" href="#">Kecantikan</a></li>
+                  <li><a class="dropdown-item" href="#">Lain-lain</a></li>
+                </ul>
+                <script>
+                    $(".dropdown-menu li a").click(function(){
+                    $(".btn:first-child").html($(this).text()+' <span class="btn"></span>');
+                    });
+                </script>
+              </div>
 
-            <label for="harga" class="form-label" style="color: #656B74; font-weight:800">Harga</label>
+            <label for="harga" class="form-label pt-3" style="color: #656B74; font-weight:800">Harga</label>
             <div class="input-group mb-3">
                 <input type="text" class="form-control" name="harga" id="harga" placeholder="Masukkan harga" aria-describedby="basic-addon3">
             </div>
 
-            <label for="deskripsi" class="form-label" style="color: #656B74; font-weight:800">Deskripsi</label>
+            <label for="deskripsi" class="form-label" style="color: #656B74; font-weight:800;">Deskripsi</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukkan deskripsi" aria-describedby="basic-addon3">
+                <textarea type="text" class="form-control" name="deskripsi" id="deskripsi" placeholder="Masukkan deskripsi" aria-describedby="basic-addon3"></textarea>
             </div>
 
             <label for="fotoBarang" class="form-label" style="color: #656B74; font-weight:800">Foto Barang (Upload ke imgbox.com)</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" name="fotoBarang" id="fotoBarang" placeholder="Masukkan link imgbox disini" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" name="fotoBarang" id="fotoBarang" placeholder="Masukkan link imgbox di sini" aria-describedby="basic-addon3">
             </div>
 
             <label for="lokasi" class="form-label" style="color: #656B74; font-weight:800">Foto Barang</label>
@@ -81,11 +95,55 @@
                 <input type="text" class="form-control" name="lokasi" id="lokasi" placeholder="Masukkan lokasi Anda" aria-describedby="basic-addon3">
             </div>
 
-            <label for="whatsapp" class="form-label" style="color: #656B74; font-weight:800">Foto Barang</label>
+            <label for="whatsapp" class="form-label" style="color: #656B74; font-weight:800">Nomor Whatsapp</label>
             <div class="input-group mb-3">
-                <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Masukkan nomor hatsapp Anda" aria-describedby="basic-addon3">
+                <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Masukkan nomor Whatsapp Anda" aria-describedby="basic-addon3">
             </div>
+        </div>
+        <div class="col">
+            <div class="paket">
+                <label for="paket" class="form-label" style="color: #656B74; font-weight:800">Pilih paket pembayaran</label>
+                <div class="col-auto">
+                    <div class="col">
+                      <label>
+                        <input type="radio" name="product" selected checked class="card-input-element" />
+                          <div class="card card-default card-input">
+                            <div class="card-header">Paket Seminggu</div>
+                            <div class="card-body">
+                                Rp10.000,-
+                            </div>
+                          </div>
+                      </label>
+                      
+                    </div>
+                    <div class="col">
+                      <label>
+                        <input type="radio" name="product" class="card-input-element" />
+                          <div class="card card-default card-input">
+                            <div class="card-header">Paket Seminggu + Penawaran Spesial</div>
+                            <div class="card-body">
+                                Rp20.000,-
+                            </div>
+                          </div>
+                      </label>
+                    </div>
+                    
+                </div>
 
+            </div>
+            <div class="caraPembayaran">
+                <label for="paket" class="form-label" style="color: #656B74; font-weight:800">Cara Pembayaran</label>
+                <p id="caraPembayaran" style="color: #656B74; font-weight:400">
+                    Lakukan pembayaran pada  e-wallet Dana atau Gopay ke nomor 087819944000. Dapat juga melalui rekening BCA 2917480317 (Vellya Riona).
+                </p>
+            </div>
+            <div class="buktiPembayaran">
+                <label for="paket" class="form-label" style="color: #656B74; font-weight:800">Foto Bukti Pembayaran (Upload ke imgbox.com)</label>
+                <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Masukkan link imgbox di sini" aria-describedby="basic-addon3">
+            </div>
+            
+            <button type="button" class="btn px-3 my-4" data-bs-dismiss="modal" style="color: #0155B6; font-weight:900; background-color: transparant; border-radius:20px;font-size:12pt; border: 2px solid rgba(1, 85, 182, 1)">Kembali</button>
+            <button type="button" class="btn btn-primary px-3" style="background-color: #0155B6; border-radius:20px;font-size:12pt">Ajukan</button>
         </div>
     </div>
 @endif
