@@ -20,6 +20,11 @@
 	</head>
 	<body>
 
+        @if (session()->has('successLogin'))
+        {!! session()->get('successLogin') !!}
+        @php session()->forget('successLogin'); @endphp
+        @endif
+
         {{-- navbar --}}
         <nav class="navbar navbar-expand-md navbar-dark fixed-top px-3 pt-3 mb-3">
             <div class="container-fluid">
@@ -86,7 +91,7 @@
                                     <button type="submit" class="btn btn-primary shadow-none px-5" style="background-color: #0155B6; border-radius:20px; font-size:14pt; width: fit-content;">Daftar</button>
                                 </div>
                                 <div class="col keterangan d-flex align-items-center px-0">
-                                    <p class="mb-0">Sudah punya akun? <a onclick="window.location='{{ route('login') }}'" style="color: #0155B6; font-weight:800">Masuk di sini!</a></p>
+                                    <p class="mb-0">Sudah punya akun? <a onclick="window.location='{{ route('login') }}'" style="color: #0155B6; font-weight:800; cursor: pointer;">Masuk di sini!</a></p>
                                 </div>
                             </div>
                         </form>
@@ -99,12 +104,8 @@
         @include('layouts.footer')
 
 		{{-- javascript --}}
-		<script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-        <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
-
         <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
     </body>
 </html>
-

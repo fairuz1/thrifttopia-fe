@@ -11,7 +11,12 @@ class DashboardController extends Controller {
         $baseUrl = 'http://47.88.89.199:9990/v1';
         $productsEndpoint = $baseUrl . '/products';
         $products = json_decode(json_encode($this->apiCall('GET', $productsEndpoint, false)), true);
-        return view('dashboard', compact('products'));
+        if (session()->has('auth')) {
+            $state = session()->get('auth')['email'];
+        } else {
+            $state = 'guest';
+        }
+        return view('dashboard', compact('products', 'state'));
     }
 
     public function jualBarang() {

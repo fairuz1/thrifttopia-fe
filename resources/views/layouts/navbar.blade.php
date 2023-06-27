@@ -114,7 +114,7 @@
                             </div>
                           </div>
                       </label>
-                      
+
                     </div>
                     <div class="col">
                       <label>
@@ -127,7 +127,7 @@
                           </div>
                       </label>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -141,7 +141,7 @@
                 <label for="paket" class="form-label" style="color: #656B74; font-weight:800">Foto Bukti Pembayaran (Upload ke imgbox.com)</label>
                 <input type="text" class="form-control" name="whatsapp" id="whatsapp" placeholder="Masukkan link imgbox di sini" aria-describedby="basic-addon3">
             </div>
-            
+
             <button type="button" class="btn px-3 my-4" data-bs-dismiss="modal" style="color: #0155B6; font-weight:900; background-color: transparant; border-radius:20px;font-size:12pt; border: 2px solid rgba(1, 85, 182, 1)">Kembali</button>
             <button type="button" class="btn btn-primary px-3" style="background-color: #0155B6; border-radius:20px;font-size:12pt">Ajukan</button>
         </div>

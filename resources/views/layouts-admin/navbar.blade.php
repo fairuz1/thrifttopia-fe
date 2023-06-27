@@ -13,31 +13,25 @@
 
             <!-- Brand -->
             <a class="navbar-brand" href="#">
-                <img src="images/icons/thriftopia-blue.svg" height="25" alt="Thriftopia" loading="lazy"/>
+                <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" height="25" alt="Thriftopia" loading="lazy"/>
             </a>
-            <!-- Search form -->
-            <!-- <form class="d-none d-md-flex input-group w-auto my-auto">
-                      <input
-                        autocomplete="off"
-                        type="search"
-                        class="form-control rounded"
-                        placeholder='Search (ctrl + "/" to focus)'
-                        style="min-width: 225px;"
-                      />
-                      <span class="input-group-text border-0"><i class="fas fa-search"></i></span>
-                    </form> -->
-
-            <!-- Right links -->
             <ul class="dropdown navbar-nav ms-auto d-flex flex-row"> <!-- Avatar -->
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle hidden-arrow d-flex align-items-center" href="#" id="navbarDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                         <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Avatar" loading="lazy"/>
                     </a>
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
-                        <li>
-                            <a class="dropdown-item" href="#">Logout</a>
-                        </li>
-                    </ul>
+                    @if (session()->has('auth'))
+                        <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdownMenuLink">
+                            <li>
+                                <a class="dropdown-item" style="cursor: pointer;">
+                                    <form method="POST" action="{{ route('logout') }}">
+                                        @csrf
+                                        <button type="submit" class="nav-link" style="cursor: pointer; border: none; background-color: transparent;"><b>{{ session()->get('auth')['email'] }}</b></button>
+                                    </form>
+                                </a>
+                            </li>
+                        </ul>
+                    @endif
                 </li>
             </ul>
         </div>

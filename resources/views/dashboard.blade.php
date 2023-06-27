@@ -20,16 +20,6 @@
                                                 <div class='card-img-overlay d-flex justify-content-center align-items-end p-0'>
                                                     <p class='card-text new-post-status px-2 py-1'>{{ $products['data'][$i]['category']['name'] }}</p>
                                                 </div>
-                                                {{-- <div id="product-data" class="d-none">
-                                                    <span id="product-name">{{ $products['data'][$i]['category']['name'] }}</span>
-                                                    <span id="product-descriptions">{{  $products['data']['description'] }}</span>
-                                                    <span id="product-price">{{  $products['data']['price'] }}</span>
-                                                    <span id="product-category">{{  $products['data']['category']['name'] }}</span>
-                                                    <span id="product-seller"></span>
-                                                    <span id="product-whatsaap"></span>
-                                                    <span id="product-location"></span>
-
-                                                </div> --}}
                                             </div>
                                         </div>
                                         <div class='card-body pt-0'>
@@ -41,6 +31,35 @@
                                                 <div class='col-auto ms-auto my-auto px-0'>
                                                     <button class='btn shadow-none p-0' data-bs-toggle='modal' data-bs-target='#modalDetail'>
                                                         <img id='detail-product' src='{{ asset("images/icons/arrow-circle-right.svg") }}' alt='go'  onclick="displayDetailProduct(this)">
+                                                        <ul id="product-data" class="d-none">
+                                                            <li id="product-name">{{ $products['data'][$i]['title'] }}</li>
+                                                            <li id="product-descriptions">{{  $products['data'][$i]['description'] }}</li>
+                                                            <li id="product-price">{{  $products['data'][$i]['price'] }}</li>
+                                                            <li id="product-category">{{  $products['data'][$i]['category']['name'] }}</li>
+                                                            <li id="product-seller">{{  $products['data'][$i]['seller']['name'] }}</li>
+                                                            <li id="product-whatsapp">{{  $products['data'][$i]['seller']['wa_number'] }}</li>
+                                                            <li id="product-location">{{  $products['data'][$i]['location']['street'] . ', ' . $products['data'][$i]['location']['city']  . ', ' . $products['data'][$i]['location']['province'] . ' ' . $products['data'][$i]['location']['postal_code'] }} </li>
+                                                            <li id="product-images">
+                                                                @php
+                                                                    for ($j=0; $j < count($products['data'][$i]['images']); $j++) {
+                                                                        $images = $products['data'][$i]['images'][$j]['url'];
+                                                                        if ($j == 0) {
+                                                                            echo "
+                                                                                <div class='carousel-item active'>
+                                                                                    <img src='{$images}' class='d-block w-100'>
+                                                                                </div>
+                                                                            ";
+                                                                        } else {
+                                                                            echo "
+                                                                                <div class='carousel-item'>
+                                                                                    <img src='{$images}' class='d-block w-100'>
+                                                                                </div>
+                                                                            ";
+                                                                        }
+                                                                    }
+                                                                @endphp
+                                                            </li>
+                                                        </ul>
                                                     </button>
                                                 </div>
                                             </div>
@@ -100,7 +119,7 @@
             </form>
 
             {{-- postingan user --}}
-            <div class="row justify-content-center g-0 px-4 my-5">
+            <div class="row row-cols-4 justify-content-center g-0 px-4 my-5">
                 @for ($i = 0; $i < count($products['data']); $i++)
                     @if ($products['data'][$i]['status'] == 'published' || $products['data'][$i]['is_sold'] != 'true' )
                         <div class='col col-md-2 p-2'>
@@ -122,7 +141,36 @@
                                             </div>
                                             <div class='col-auto ms-auto my-auto px-0'>
                                                 <button class='btn shadow-none p-0' data-bs-toggle='modal' data-bs-target='#modalDetail'>
-                                                    <img id='detail-product' src='{{ asset("images/icons/arrow-circle-right.svg") }}' alt='go' onclick="displayDetailProduct(this)">
+                                                    <img id='detail-product' src='{{ asset("images/icons/arrow-circle-right.svg") }}' alt='go'  onclick="displayDetailProduct(this)">
+                                                    <ul id="product-data" class="d-none">
+                                                        <li id="product-name">{{ $products['data'][$i]['title'] }}</li>
+                                                        <li id="product-descriptions">{{  $products['data'][$i]['description'] }}</li>
+                                                        <li id="product-price">{{  $products['data'][$i]['price'] }}</li>
+                                                        <li id="product-category">{{  $products['data'][$i]['category']['name'] }}</li>
+                                                        <li id="product-seller">{{  $products['data'][$i]['seller']['name'] }}</li>
+                                                        <li id="product-whatsapp">{{  $products['data'][$i]['seller']['wa_number'] }}</li>
+                                                        <li id="product-location">{{  $products['data'][$i]['location']['street'] . ', ' . $products['data'][$i]['location']['city']  . ', ' . $products['data'][$i]['location']['province'] . ' ' . $products['data'][$i]['location']['postal_code'] }} </li>
+                                                        <li id="product-images">
+                                                            @php
+                                                                for ($j=0; $j < count($products['data'][$i]['images']); $j++) {
+                                                                    $images = $products['data'][$i]['images'][$j]['url'];
+                                                                    if ($j == 0) {
+                                                                        echo "
+                                                                            <div class='carousel-item active'>
+                                                                                <img src='{$images}' class='d-block w-100'>
+                                                                            </div>
+                                                                        ";
+                                                                    } else {
+                                                                        echo "
+                                                                            <div class='carousel-item'>
+                                                                                <img src='{$images}' class='d-block w-100'>
+                                                                            </div>
+                                                                        ";
+                                                                    }
+                                                                }
+                                                            @endphp
+                                                        </li>
+                                                    </ul>
                                                 </button>
                                             </div>
                                         </div>
@@ -149,7 +197,7 @@
                     {{-- modal header --}}
                     <div class="modal-header border-0">
                         <div class="col-auto me-auto">
-                            <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" class="img-fluid" style="width: 60%">
+                            <img src="{{ asset('images/icons/thriftopia-blue.svg') }}" class="img-fluid">
                         </div>
                         <div class="col-auto ms-auto">
                             <button id="close-modal" type="button" class="btn-close shadow-none" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -164,14 +212,14 @@
                                 <div id="postImages" class="carousel slide" data-bs-ride="carousel">
                                     {{-- carousel images --}}
                                     <div class="carousel-inner">
-                                        <div class="carousel-item active">
-                                            <img src="{{ asset('images/pictures/radio.png') }}" class="d-block w-100">
+                                        <div id="carousel-1" class="carousel-item active">
+                                            <img src="{{ asset('images/pictures/radio.png') }}" onerror="this.src='{{ asset('images/pictures/empty-image.png') }}'" class="d-block w-100">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{ asset('images/pictures/skintific.png') }}" class="d-block w-100">
+                                            <img src="{{ asset('images/pictures/skintific.png') }}" onerror="this.src='{{ asset('images/pictures/empty-image.png') }}'" class="d-block w-100">
                                         </div>
                                         <div class="carousel-item">
-                                            <img src="{{ asset('images/pictures/jaket-kulit.png') }}" class="d-block w-100">
+                                            <img src="{{ asset('images/pictures/jaket-kulit.png') }}" onerror="this.src='{{ asset('images/pictures/empty-image.png') }}'" class="d-block w-100">
                                         </div>
                                     </div>
 
@@ -198,13 +246,11 @@
                             <div class="col">
                                 <div class="d-flex flex-column">
                                     <div id="post-data" class="p-2">
-                                        <p id="post-categories" class="post-categories py-1 px-2"><b>ELEKTRONIK</b></p>
-                                        <p id="post-title" class="post-title">Jaket Kulit</p>
-                                        <p id="post-location" class="post-location"><i class=" me-2 fas fa-location-dot"></i>Sendowo, Kota Yogyakarta</p>
-                                        <p id="post-cost" class="post-cost">Rp 180.000</p>
-                                        <p id="post-descriptions" class="post-descriptions">
-                                            Kondisi masih bagus, pembelian Februari 2022. H&M. Terdapat 2 saku, belt lepas pasang. Bahan kulit asli.
-                                        </p>
+                                        <p class="post-categories py-1 px-2"><b id="post-categories"></b></p>
+                                        <p id="post-title" class="post-title"></p>
+                                        <p id="post-location" class="post-location"><i class=" me-2 fas fa-location-dot"></i></p>
+                                        <p id="post-cost" class="post-cost"></p>
+                                        <p id="post-descriptions" class="post-descriptions"></p>
                                     </div>
                                 </div>
                             </div>
@@ -217,11 +263,11 @@
                                             <img src="{{ asset('images/pictures/default-profile.png') }}" alt="Avatar" class="avatar">
                                         </div>
                                         <div class="col-auto">
-                                            <p class="post-seller mb-0">Default seller</p>
+                                            <p id="post-seller" class="post-seller mb-0"></p>
                                             <p class="post-seller-details">Seller</p>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-whatsapp py-2"><span class="d-flex justify-content-center align-items-center"><i class="fa fa-whatsapp fa-xl me-2"></i>Hubungi Penjual</span></button>
+                                    <button id="call-whatsapp" type="button" class="btn btn-whatsapp py-2" onclick="redirectToWhatsappPage()"><span class="d-flex justify-content-center align-items-center"><i class="fa fa-whatsapp fa-xl me-2"></i>Hubungi Penjual</span></button>
                                     <a id="mark-as-sold" type="button" class="btn btn-sold mt-2 py-2" href="#modalTerjual" data-bs-toggle='modal' data-bs-target='#modalTerjual' role="button">Tandai Terjual</a>
                                 </div>
                             </div>
@@ -258,7 +304,6 @@
         </div>
 
         <script type="text/javascript">
-
             $(document).ready(function(){
                 // remove unnecesary margin after modal were displayed
                 $('body').on('show.bs.modal', function () {
@@ -270,8 +315,46 @@
                 });
             });
 
+            var whatsappURL = 'https://wa.me/';
+
             function displayDetailProduct(element) {
-                console.log(element.documentElement.parentNode);
+                // get data by using javascript DOM
+                var productElement = element.nextElementSibling.getElementsByTagName('li');
+
+                // append data to modal
+                document.getElementById('post-categories').innerHTML = productElement[3].innerHTML;
+                document.getElementById('post-title').innerHTML = productElement[0].innerHTML;
+                document.getElementById('post-location').innerHTML = productElement[6].innerHTML;
+                document.getElementById('post-cost').innerHTML = `Rp. ${productElement[2].innerHTML}`;
+                document.getElementById('post-descriptions').innerHTML = productElement[1].innerHTML;
+
+                // setting new whatsappURL
+                whatsappURL = `https://wa.me/${productElement[5].innerHTML}`;
+                document.getElementById('post-seller').innerHTML = productElement[4].innerHTML;
+                if (checkUserState() === true) {
+                    document.getElementById('mark-as-sold').hidden = true;
+                } else {
+                    document.getElementById('call-whatsapp').disabled = true;
+                    document.getElementById('mark-as-sold').hidden = true;
+                }
+
+                // setting image carousel
+                var images = document.getElementById("product-images");
+                console.log(images.childNodes);
+            }
+
+            function redirectToWhatsappPage() {
+                if (checkUserState() === true) {
+                    window.location = whatsappURL;
+                }
+            }
+
+            function checkUserState() {
+                if ({!! json_encode($state) !!} === 'guest') {
+                    return false;
+                } else {
+                    return true;
+                }
             }
 
         </script>

@@ -1,55 +1,56 @@
 @extends('layouts-admin.app')
 
-@push('styles')
-{{-- dashboard css --}}
-
-@endpush
-
 @section('content')
+
 <!--Main layout-->
 <main style="margin-top: 58px;">
     <div class="row mx-3 pt-4 px-8">
         <!-- <div class="col"> -->
             <div class="row ringkasan">
                 <div class="judul">Konten</div>
-                    <div class="row permintaan py-3 pb-4" style="font-size: 10pt;">
+                    <div class="row permintaan py-3 pb-4">
                         <table id="datatable" class="table table-striped">
                             <thead>
                                 <tr>
-                                <th>Tanggal</th>
-                                <th>Jenis Postingan</th>
-                                <th>Kategori</th>
-                                <th>Judul</th>
-                                <th>Lokasi</th>
-                                <th>No. Whatsapp</th>
-                                <th>Harga</th>
-                                <th>Username</th>
-                                <th>Status</th>
+                                    <th id="tanggal_table">Tanggal</th>
+                                    <th id="jenis_table">Jenis Postingan</th>
+                                    <th id="kategori_table">Kategori</th>
+                                    <th id="judul_table">Judul</th>
+                                    <th id="lokasi_table">Lokasi</th>
+                                    <th id="whatsapp_table">No. Whatsapp</th>
+                                    <th id="harga_table">Harga</th>
+                                    <th id="user_table">Username</th>
+                                    <th id="status_table">Status</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr>
-                                <td>10/10/22</td>
-                                <td>Paket Seminggu</td>
-                                <td>Aksesoris</td>
-                                <td>Sepatu 
-                                    <button style="border: none; background: transparent; color: #0155B6;" data-bs-toggle="modal" data-bs-target="#modalDetail">
-                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                    </button>		
-                                </td>
-                                <td>Jogja</td>
-                                <td>087819944000</td>
-                                <td>100000</td>
-                                <td>vellya123</td>
-                                <td>published</td>
-                                
+                                @for ($i = 0; $i < count($productsData['data']); $i++)
+                                    <tr>
+                                        <td>{{ $productsData['data'][$i]['created_at'] }}</td>
+                                        <td>{{ $productsData['data'][$i]['pricing']['name'] }}</td>
+                                        <td>{{ $productsData['data'][$i]['category']['name'] }}</td>
+                                        <td>{{ $productsData['data'][$i]['title'] }}
+                                            <button style='border: none; background: transparent; color: #0155B6;' data-bs-toggle='modal' data-bs-target='#modalDetail'>
+                                                <i class='fa-solid fa-arrow-up-right-from-square'></i>
+                                            </button>
+                                        </td>
+                                        <td>{{  $productsData['data'][$i]['location']['street'] . ', ' . $productsData['data'][$i]['location']['city']  . ', ' . $productsData['data'][$i]['location']['province'] . ' ' . $productsData['data'][$i]['location']['postal_code'] }}</td>
+                                        <td>{{  $productsData['data'][$i]['seller']['wa_number'] }}</td>
+                                        <td>{{  $productsData['data'][$i]['price'] }}</td>
+                                        <td>{{  $productsData['data'][$i]['seller']['name'] }}</td>
+                                        <td>{{  $productsData['data'][$i]['status'] }}</td>
+                                    </tr>
+                                @endfor
+
                             </tbody>
                         </table>
                     </div>
-                    
+                </div>
+            </div>
+
     </div>
 
-    
+
     {{-- popup detail modal --}}
     <div class="modal fade" id="modalDetail" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modal-login-label" aria-hidden="true">
         <div class="modal-dialog modal-xl modal-dialog-centered">
@@ -137,15 +138,15 @@
             </div>
         </div>
     </div>
-                        
-    
+
+
 
 </main>
     <!--Main layout-->
         <script>
-          $(document).ready(function () {
-            $('#datatable').DataTable();
-          });
+        $(document).ready(function () {
+                $('#datatable').DataTable();
+        });
         </script>
 @endsection
 
