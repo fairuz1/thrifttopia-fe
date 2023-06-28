@@ -268,7 +268,7 @@
                                         </div>
                                     </div>
                                     <button id="call-whatsapp" type="button" class="btn btn-whatsapp py-2" onclick="redirectToWhatsappPage()"><span class="d-flex justify-content-center align-items-center"><i class="fa fa-whatsapp fa-xl me-2"></i>Hubungi Penjual</span></button>
-                                    <a id="mark-as-sold" type="button" class="btn btn-sold mt-2 py-2" href="#modalTerjual" data-bs-toggle='modal' data-bs-target='#modalTerjual' role="button">Tandai Terjual</a>
+                                    <a id="mark-as-sold" type="button" class="btn btn-sold mt-2 py-2" href="#modalTerjual" data-bs-toggle='modal' data-bs-target='#modalTerjual' role="button" onclick="window.location='{{ route('dashboard') }}'">Tandai Terjual</a>
                                 </div>
                             </div>
                         </div>
@@ -332,7 +332,7 @@
                 whatsappURL = `https://wa.me/${productElement[5].innerHTML}`;
                 document.getElementById('post-seller').innerHTML = productElement[4].innerHTML;
                 if (checkUserState() === true) {
-                    document.getElementById('mark-as-sold').hidden = true;
+                    // document.getElementById('mark-as-sold').hidden = true;
                 } else {
                     document.getElementById('call-whatsapp').disabled = true;
                     document.getElementById('mark-as-sold').hidden = true;

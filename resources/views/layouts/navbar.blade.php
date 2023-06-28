@@ -57,7 +57,7 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" name="kategoriBarang" id="kategoriBarang" value="">
+                        <input type="text" class="form-control d-none" name="kategoriBarang" id="kategoriBarang" value="">
                     </div>
 
                     <label for="kategori" class="form-label" style="color: #656B74; font-weight:800">Kategori</label>
@@ -170,7 +170,11 @@
                     </h1>
                 </div>
                 <div class="col-12">
+                    @if (session()->has('auth'))
+                    <button class="btn btn-outline-dark banner-button mt-2 px-4" href="#" role="button" onclick="window.location='{{ route('jualBarang') }}'" style="cursor: pointer;">Coba Sekarang!</button>
+                    @else
                     <button class="btn btn-outline-dark banner-button mt-2 px-4" href="#" role="button" onclick="window.location='{{ route('login') }}'" style="cursor: pointer;">Coba Sekarang!</button>
+                    @endif
                 </div>
             </div>
         </div>
