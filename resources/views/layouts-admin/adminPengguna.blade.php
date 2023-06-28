@@ -13,41 +13,39 @@
             <!-- <div class="col"> -->
                 <div class="row ringkasan">
                     <div class="judul">Pengguna</div>
-
-                    <!-- <div class="row row-cols-1 row-cols-md-3 py-2 pb-4"> -->
-                        <!-- <div class="col"> -->
-                            <!-- permintaan Postingan -->
-                        <div class="row permintaan py-3 pb-4" style="font-size: 10pt;">
-                        <table id="datatable" class="table table-striped">
-                            <thead>
-                                <tr>
-                                <th>Username</th>
-                                <!-- <th>Status Akun</th> -->
-                                <th>Email</th>
-                                <th>Nomor Whatsapp</th>
-                                <th>Barang Aktif</th>
-                                <th>Barang Terjual</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                <td>
-                                    <div>
-                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Avatar" loading="lazy"/>
-                                        vellya123
-                                    </div>
-                                </td>
-                                <td>vellya23@mail.com</td>
-                                <td>087819944000</td>
-                                <td>1</td>
-                                <td>0</td>
-                                        
-                            </tbody>
-                        </table>
+                        <div class="row permintaan py-3 pb-4">
+                            <table id="datatable" class="table table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Username</th>
+                                        <th>Email</th>
+                                        <th>Nomor Whatsapp</th>
+                                        {{-- <th>Barang Aktif</th>
+                                        <th>Barang Terjual</th> --}}
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @for ($i = 0; $i < count($users['data']); $i++)
+                                        @if ($users['data'][$i]['name'] != '')
+                                            <tr>
+                                                <td>
+                                                    <div>
+                                                        <img src="https://mdbcdn.b-cdn.net/img/Photos/Avatars/img (31).webp" class="rounded-circle" height="22" alt="Avatar" loading="lazy"/>
+                                                        {{ $users['data'][$i]['name'] }}
+                                                    </div>
+                                                </td>
+                                                <td>{{ $users['data'][$i]['email'] }}</td>
+                                                <td>{{ $users['data'][$i]['wa_number'] }}</td>
+                                            </tr>
+                                        @endif
+                                    @endfor
+                                </tbody>
+                            </table>
+                        </div>
                 </div>
             </div>
-                            
-        
+
+
 
     </main>
     <!--Main layout-->

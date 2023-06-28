@@ -126,7 +126,7 @@
                                         <img src="{{ asset('images/pictures/default-profile.png') }}" alt="Avatar" class="avatar">
                                     </div>
                                     <div class="col-auto">
-                                        <p class="post-seller mb-0">Default seller</p>
+                                        <p class="post-seller mb-0">Seller</p>
                                         <p class="post-seller-details">Seller</p>
                                     </div>
                                 </div>

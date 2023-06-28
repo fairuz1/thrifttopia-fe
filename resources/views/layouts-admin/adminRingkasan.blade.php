@@ -244,7 +244,7 @@
                                     <img src="{{ asset('images/pictures/default-profile.png') }}" alt="Avatar" class="avatar">
                                 </div>
                                 <div class="col-auto">
-                                    <p class="post-seller mb-0">Default seller</p>
+                                    <p class="post-seller mb-0">seller</p>
                                     <p class="post-seller-details">Seller</p>
                                 </div>
                             </div>
@@ -278,7 +278,7 @@
                 {{-- modal footer --}}
                 <div class="modal-footer border-0">
                     <button id="close-modal" type="button" class="btn btn-back px-3" data-bs-dismiss="modal" aria-label="Close">Kembali</button>
-                    <button type="button" class="btn btn-primary px-5" style="border-radius: 20px; font-size: 1rem;">Ya</button>
+                    <button type="button" class="btn btn-primary px-5" style="border-radius: 20px; font-size: 1rem;" onclick="window.location='{{ route('admin-dashboard') }}'">Ya</button>
                 </div>
             </div>
         </div>
@@ -305,7 +305,7 @@
                 {{-- modal footer --}}
                 <div class="modal-footer border-0">
                     <button id="close-modal" type="button" class="btn btn-back px-3" data-bs-dismiss="modal" aria-label="Close">Kembali</button>
-                    <button type="button" class="btn btn-primary px-5" style="border-radius: 20px; font-size: 1rem;">Ya</button>
+                    <button type="button" class="btn btn-primary px-5" style="border-radius: 20px; font-size: 1rem;" onclick="window.location='{{ route('admin-dashboard') }}'">Ya</button>
                 </div>
             </div>
         </div>
